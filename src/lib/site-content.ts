@@ -18,7 +18,7 @@ import {
 
 export const school = {
   name: "Annointed comprehensive high school",
-  shortName: "RGGA",
+  shortName: "Annointed",
   logo: "/logo.svg",
   address: "Anita Street (by Basumoh Gas Plant)",
   location: "Uyo, Akwa Ibom State, Nigeria",

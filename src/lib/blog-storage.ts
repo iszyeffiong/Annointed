@@ -44,7 +44,7 @@ const SECONDARY_FEATURE_IMAGE = "https://images.unsplash.com/photo-1427504494785
 export const initialBlogPosts: BlogPost[] = [
   {
     id: "post-1",
-    title: "Nurturing Confident Readers: The RGGA Early Years Literacy Framework",
+    title: "Nurturing Confident Readers: The Annointed Early Years Literacy Framework",
     category: "Early Years & Primary",
     date: "October 1, 2026",
     author: "Mrs. Grace Effiong",
@@ -76,7 +76,7 @@ export const initialBlogPosts: BlogPost[] = [
     readTime: "5 min read",
     tags: ["Character", "Christian Values", "Leadership"],
     content: [
-      "In a fast-changing modern world, intellectual capability without moral character produces fragile success. At RGGA, our compass is grounded in the enduring values of integrity, compassion, humility, and disciplined focus.",
+      "In a fast-changing modern world, intellectual capability without moral character produces fragile success. At Annointed, our compass is grounded in the enduring values of integrity, compassion, humility, and disciplined focus.",
       "Every morning assembly, classroom interaction, and collaborative project is infused with intentional character mentoring. We teach our learners that true excellence means doing the right thing even when no one is watching.",
       "Our students participate in community outreach and mutual encouragement initiatives, learning to appreciate the dignity of every person and developing grateful, generous hearts.",
       "When faith and character underpin academic diligence, students emerge not just with certificates, but with the wisdom to lead and positively impact society."
@@ -115,7 +115,7 @@ export const initialBlogPosts: BlogPost[] = [
     readTime: "3 min read",
     tags: ["Music", "Arts", "Sports", "Wellbeing"],
     content: [
-      "A complete education engages the whole child — mind, heart, voice, and body. Co-curricular activities are not secondary afterthoughts at RGGA; they are vital components of emotional balance and leadership training.",
+      "A complete education engages the whole child — mind, heart, voice, and body. Co-curricular activities are not secondary afterthoughts at Annointed; they are vital components of emotional balance and leadership training.",
       "Through choir rehearsals, instrument practice, drama, and visual arts, children discover their innate talents and learn the discipline of stage presence and creative expression.",
       "On the sports field, our athletic training instills teamwork, resilience in the face of setbacks, physical endurance, and healthy competitive spirit.",
       "These moments of camaraderie and shared achievement help each pupil find their unique voice and build enduring friendships."
@@ -135,7 +135,7 @@ export const initialBlogPosts: BlogPost[] = [
     tags: ["Secondary School", "Exams", "WAEC", "Study Skills"],
     content: [
       "Preparing students for national and international examinations requires both thorough curriculum coverage and strategic exam mastery techniques.",
-      "At RGGA Secondary School, we begin examination orientation well in advance through continuous diagnostic testing, timed past-question workshops, and individualized revision plans tailored to each learner's strengths and areas of growth.",
+      "At Annointed Comprehensive High School, we begin examination orientation well in advance through continuous diagnostic testing, timed past-question workshops, and individualized revision plans tailored to each learner's strengths and areas of growth.",
       "Our experienced educators emphasize critical thinking, structured essay writing, and analytical problem-solving rather than cramming.",
       "By coupling rigorous academic preparation with calm, focused study habits and moral encouragement, we ensure our students step into examination halls with supreme confidence."
     ]
@@ -173,7 +173,7 @@ export const initialBlogPosts: BlogPost[] = [
     tags: ["Mathematics", "Logic", "Problem Solving"],
     content: [
       "Mathematics is not just about memorizing times tables; it is the universal language of logic, pattern recognition, and analytical deduction.",
-      "At RGGA, our mathematics curriculum emphasizes concrete, pictorial, and abstract representations so that abstract concepts become intuitive.",
+      "At Annointed, our mathematics curriculum emphasizes concrete, pictorial, and abstract representations so that abstract concepts become intuitive.",
       "Students solve open-ended real-world problems in collaborative groups, articulating their reasoning and exploring multiple solution pathways.",
       "This approach demystifies math and inspires a deep, lifelong appreciation for analytical inquiry."
     ]
@@ -191,7 +191,7 @@ export const initialBlogPosts: BlogPost[] = [
     readTime: "4 min read",
     tags: ["Discipline", "Classroom Management", "Mentorship"],
     content: [
-      "Discipline at RGGA is never punitive or fear-based; it is rooted in discipleship, mutual dignity, and personal responsibility.",
+      "Discipline at Annointed is never punitive or fear-based; it is rooted in discipleship, mutual dignity, and personal responsibility.",
       "We believe that when children understand the 'why' behind school community rules, self-regulation becomes second nature.",
       "Teachers celebrate positive actions, empathetic behavior, and quiet acts of kindness through recognition badges and values certificates.",
       "This positive reinforcement builds an orderly, peaceful classroom atmosphere where children feel safe to take academic risks and learn from mistakes."
@@ -230,7 +230,7 @@ export const initialBlogPosts: BlogPost[] = [
     tags: ["Parenting", "Community", "Collaboration"],
     content: [
       "A child's education is a three-way partnership among the pupil, the teachers, and the family.",
-      "At RGGA, we maintain transparent, ongoing communication through daily progress books, parent-teacher conferences, and digital updates.",
+      "At Annointed, we maintain transparent, ongoing communication through daily progress books, parent-teacher conferences, and digital updates.",
       "We encourage parents to create quiet homework routines, celebrate small milestones, and model a love for reading at home.",
       "Together, parents and educators create an unbreakable safety net that supports the child through every developmental milestone."
     ]
@@ -282,7 +282,7 @@ export const initialBlogPosts: BlogPost[] = [
     authorRole: "Sports & PE Lead",
     previewImage: DEFAULT_FEATURE_IMAGE,
     fullImage: DEFAULT_FEATURE_IMAGE,
-    excerpt: "A healthy body supports an active mind: physical education drills, sports days, and nutritional wellness habits at RGGA.",
+    excerpt: "A healthy body supports an active mind: physical education drills, sports days, and nutritional wellness habits at Annointed.",
     readTime: "3 min read",
     tags: ["Sports", "Fitness", "Health"],
     content: [
@@ -325,7 +325,7 @@ export const initialBlogPosts: BlogPost[] = [
     tags: ["Civic Duty", "Leadership", "Service"],
     content: [
       "True leadership is not measured by title or power, but by humble service and dedication to the common good.",
-      "Through civic education, student council elections, and environmental stewardship projects, RGGA pupils experience active citizenship.",
+      "Through civic education, student council elections, and environmental stewardship projects, Annointed pupils experience active citizenship.",
       "We encourage young leaders to identify community needs, propose collaborative solutions, and practice servant leadership daily.",
       "We are proud to raise patriotic, principled leaders who will champion progress, equity, and peace in Nigeria and beyond."
     ]
@@ -343,7 +343,7 @@ export const initialBlogPosts: BlogPost[] = [
     readTime: "4 min read",
     tags: ["Assessment", "Pedagogy", "Academics"],
     content: [
-      "Assessment at RGGA is not a high-stress post-mortem exam; it is an ongoing compass that guides daily classroom teaching.",
+      "Assessment at Annointed is not a high-stress post-mortem exam; it is an ongoing compass that guides daily classroom teaching.",
       "Through formative exit tickets, low-stakes weekly quizzes, and verbal check-ins, educators gauge comprehension in real-time.",
       "Identified gaps are immediately addressed through peer tutoring, small group interventions, and personalized practice exercises.",
       "This consistent feedback loop builds mastery, prevents anxiety, and ensures steady, verifiable academic progress."
@@ -435,15 +435,15 @@ export const initialBlogComments: BlogComment[] = [
     authorName: "Anonymous Reader",
     authorRole: "Community Member",
     isAnonymous: true,
-    content: "Moral grounding and character education are so essential in today's world. Blessings to the leadership of RGGA.",
+    content: "Moral grounding and character education are so essential in today's world. Blessings to the leadership of Annointed.",
     date: "September 29, 2026 at 11:04 AM",
     status: "published",
   },
 ];
 
-const STORAGE_KEY = "rgga_blog_posts";
-const COMMENTS_KEY = "rgga_blog_comments";
-const AUTH_KEY = "rgga_admin_auth";
+const STORAGE_KEY = "annointed_blog_posts_v3";
+const COMMENTS_KEY = "annointed_blog_comments_v3";
+const AUTH_KEY = "annointed_admin_auth_v3";
 
 // Normalize seed posts to have published status
 const normalizedInitialPosts: BlogPost[] = initialBlogPosts.map((p) => ({
@@ -466,7 +466,21 @@ export function getStoredBlogPosts(includeAllStatuses = false): BlogPost[] {
         : normalizedInitialPosts.filter((p) => p.status === "published" || !p.status);
     }
     const parsed: BlogPost[] = JSON.parse(saved);
-    const postList = Array.isArray(parsed) && parsed.length > 0 ? parsed : normalizedInitialPosts;
+    if (!Array.isArray(parsed) || parsed.length === 0) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(normalizedInitialPosts));
+      return includeAllStatuses
+        ? normalizedInitialPosts
+        : normalizedInitialPosts.filter((p) => p.status === "published" || !p.status);
+    }
+
+    // Merge any missing seed posts into existing list
+    const existingIds = new Set(parsed.map((p) => p.id));
+    const missingSeedPosts = normalizedInitialPosts.filter((p) => !existingIds.has(p.id));
+    const postList = missingSeedPosts.length > 0 ? [...parsed, ...missingSeedPosts] : parsed;
+
+    if (missingSeedPosts.length > 0) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(postList));
+    }
     
     if (includeAllStatuses) {
       return postList;
@@ -628,14 +642,24 @@ export function getStoredComments(): BlogComment[] {
       return initialBlogComments;
     }
     const parsed = JSON.parse(saved);
-    return Array.isArray(parsed) ? parsed : initialBlogComments;
+    if (!Array.isArray(parsed) || parsed.length === 0) {
+      localStorage.setItem(COMMENTS_KEY, JSON.stringify(initialBlogComments));
+      return initialBlogComments;
+    }
+    const existingIds = new Set(parsed.map((c) => c.id));
+    const missingSeedComments = initialBlogComments.filter((c) => !existingIds.has(c.id));
+    const commentList = missingSeedComments.length > 0 ? [...parsed, ...missingSeedComments] : parsed;
+    if (missingSeedComments.length > 0) {
+      localStorage.setItem(COMMENTS_KEY, JSON.stringify(commentList));
+    }
+    return commentList;
   } catch (e) {
     console.error("Failed to load blog comments from localStorage", e);
     return initialBlogComments;
   }
 }
 
-const COMMENT_MODERATION_MODE_KEY = "rgga_require_comment_approval";
+const COMMENT_MODERATION_MODE_KEY = "annointed_require_comment_approval_v3";
 
 export function isCommentApprovalRequired(): boolean {
   if (typeof window === "undefined") return false;

@@ -102,7 +102,7 @@ function GalleryPage() {
     <>
       <PageHero
         eyebrow="Campus Gallery"
-        title="A glimpse of vibrant life at RGGA."
+        title="A glimpse of vibrant life at Annointed."
         intro="Explore photographic glimpses of academic exploration, cultural creativity, athletic achievements, and joyful community life across all school tiers."
       />
 

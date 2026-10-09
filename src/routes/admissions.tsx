@@ -13,7 +13,7 @@ const steps = [
   { n: "01", title: "Tell us about your child", text: "Send a short enquiry using the form below.", icon: MessageCircleQuestion },
   { n: "02", title: "Visit and meet us", text: "Arrange a conversation and school tour with our team.", icon: School },
   { n: "03", title: "Complete the application", text: "Receive the current form, requirements and fees guide.", icon: ClipboardCheck },
-  { n: "04", title: "Welcome to RGGA", text: "Confirm placement and prepare for a joyful first day.", icon: Send },
+  { n: "04", title: "Welcome to Annointed", text: "Confirm placement and prepare for a joyful first day.", icon: Send },
 ];
 
 function AdmissionsPage() { return <>

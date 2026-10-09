@@ -68,7 +68,7 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
-      { title: "Admin & Faculty Portal — The RGGA Chronicle" },
+      { title: "Admin & Faculty Portal — Annointed Chronicle" },
       {
         name: "description",
         content: "Faculty and teacher login to review pending student/parent submissions, publish, edit, and moderate school blog posts.",
@@ -91,8 +91,8 @@ type ActiveTab = "all" | "published" | "pending" | "rejected" | "comments" | "sa
 
 function AdminPage() {
   const [authenticated, setAuthenticated] = useState<boolean>(false);
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [comments, setComments] = useState<BlogComment[]>([]);
+  const [posts, setPosts] = useState<BlogPost[]>(() => getStoredBlogPosts(true));
+  const [comments, setComments] = useState<BlogComment[]>(() => getStoredComments());
   const [selectedCommentIds, setSelectedCommentIds] = useState<string[]>([]);
   const [requireCommentApproval, setRequireCommentApproval] = useState<boolean>(false);
   const [restrictedWords, setRestrictedWords] = useState<string[]>([]);
@@ -184,7 +184,7 @@ function AdminPage() {
     setImageUrl("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80");
     setExcerpt("");
     setContent("");
-    setTags("Education, Learning, RGGA");
+    setTags("Education, Learning, Annointed");
     setFeatured(false);
     setIsEditorOpen(true);
   };
@@ -429,7 +429,7 @@ function AdminPage() {
               <Lock className="h-5 w-5" />
             </span>
             <span className="mt-4 block text-[0.68rem] font-bold uppercase tracking-[0.2em] text-stone-500">
-              The RGGA Chronicle
+              Annointed Chronicle
             </span>
             <h1 className="mt-1 font-display text-2xl font-black uppercase text-stone-950">
               Editorial CMS & Review Portal
@@ -498,7 +498,7 @@ function AdminPage() {
 
           <div className="mt-6 text-center">
             <Link to="/news" className="text-xs font-bold text-stone-700 hover:text-stone-950 inline-flex items-center gap-1">
-              <ArrowLeft className="h-3.5 w-3.5" /> Return to School Newspaper
+              <ArrowLeft className="h-3.5 w-3.5" /> Return to School Blog
             </Link>
           </div>
         </div>
@@ -514,13 +514,13 @@ function AdminPage() {
         <div className="page-shell flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="grid h-10 w-10 place-items-center rounded-xs bg-gold text-stone-950 font-black font-display text-base">
-              RG
+              AN
             </div>
             <div>
               <span className="text-[0.65rem] font-bold uppercase tracking-widest text-gold block">
                 Editorial Review & CMS Portal
               </span>
-              <h1 className="font-display text-lg font-bold">The RGGA Chronicle CMS</h1>
+              <h1 className="font-display text-lg font-bold">Annointed Chronicle CMS</h1>
             </div>
           </div>
 

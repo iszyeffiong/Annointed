@@ -101,7 +101,7 @@ const contributorRoles: { value: SubmitterRole; label: string; desc: string }[] 
 ];
 
 function NewsPage() {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [posts, setPosts] = useState<BlogPost[]>(() => getStoredBlogPosts(false));
   const [activeCategory, setActiveCategory] = useState<string>("All Editions");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
@@ -1118,7 +1118,7 @@ function NewsPage() {
               <div className="rounded-xs border border-amber-300 bg-amber-50/70 p-3.5 flex items-start gap-3">
                 <ShieldAlert className="h-5 w-5 text-amber-800 shrink-0 mt-0.5" />
                 <div className="text-[0.72rem] text-amber-900 leading-relaxed font-serif">
-                  <strong>Editorial Review Process:</strong> Submitted posts from students, parents, and teachers are held in a pending state and verified by school administrators before going live on The RGGA Chronicle.
+                  <strong>Editorial Review Process:</strong> Submitted posts from students, parents, and teachers are held in a pending state and verified by school administrators before going live on the Annointed School Chronicle.
                 </div>
               </div>
 
@@ -1171,7 +1171,7 @@ function NewsPage() {
             <div className="border-b-2 border-stone-900 pb-4 mb-6">
               <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-bold uppercase tracking-widest text-stone-600">
                 <span className="text-amber-800 font-black">
-                  RGGA Chronicle · {selectedPost.category}
+                  Annointed Chronicle · {selectedPost.category}
                 </span>
                 <span>{selectedPost.date}</span>
               </div>
