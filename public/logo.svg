@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" width="100%" height="100%">
+  <defs>
+    <linearGradient id="crestBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#183059" />
+      <stop offset="100%" stop-color="#0e1d38" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8d67a" />
+      <stop offset="100%" stop-color="#cf9427" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Crest Shield -->
+  <path d="M50 5 C75 5, 91 18, 91 48 C91 76, 64 91, 50 95 C36 91, 9 76, 9 48 C9 18, 25 5, 50 5 Z" fill="url(#crestBg)" stroke="url(#goldGrad)" stroke-width="4" stroke-linejoin="round" />
+
+  <!-- Sun in upper portion -->
+  <circle cx="50" cy="27" r="12" fill="url(#goldGrad)" opacity="0.9" />
+  
+  <!-- Subtle sun rays -->
+  <path d="M50 9 L50 6 M35 15 L32 12 M65 15 L68 12 M29 27 L25 27 M71 27 L75 27" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" opacity="0.75" />
+
+  <!-- Open Book at bottom -->
+  <path d="M24 67 C35 63, 46 65, 50 70 C54 65, 65 63, 76 67 C76 73, 65 70, 50 76 C35 70, 24 73, 24 67 Z" fill="url(#goldGrad)" opacity="0.85" />
+  <path d="M50 70 L50 76" stroke="#0e1d38" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Monogram RG in center -->
+  <text x="50" y="54" text-anchor="middle" font-family="'Playfair Display', Georgia, serif" font-weight="700" font-size="24" fill="#ffffff" letter-spacing="1">RG</text>
+</svg>
