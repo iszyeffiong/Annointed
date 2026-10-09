@@ -49,16 +49,16 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/news")({
   head: () => ({
     meta: [
-      { title: "The RGGA Chronicle — Official School Newspaper & Blog" },
+      { title: "News & Blog — Annointed comprehensive high school" },
       {
         name: "description",
         content:
-          "Read the official newspaper and educational journal of Annointed comprehensive high school, Uyo. Covering classroom discoveries, STEM innovations, student creative writing, and academic achievements.",
+          "Explore the official blog, news, student stories, and academic updates from Annointed comprehensive high school, Uyo.",
       },
-      { property: "og:title", content: "The RGGA Chronicle — School Newspaper & Blog" },
+      { property: "og:title", content: "News & Blog — Annointed comprehensive high school" },
       {
         property: "og:description",
-        content: "Discover inspiring school news, educational thought leadership, and classroom stories.",
+        content: "Discover inspiring school news, educational insights, and classroom stories.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -307,29 +307,29 @@ function NewsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-[#fcfbfa] text-[#1c1c1c] font-sans">
-      {/* Newspaper Top Utility Bar */}
-      <div className="border-b border-stone-300 bg-stone-900 text-stone-200 text-xs py-2 px-4">
+    <div className="min-h-screen bg-background text-foreground font-sans">
+      {/* Blog Top Utility & Ticker Bar */}
+      <div className="border-b border-primary/20 bg-primary text-primary-foreground text-xs py-2.5 px-4">
         <div className="page-shell flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <span className="font-semibold text-gold tracking-wide uppercase flex items-center gap-1.5">
-              <Globe className="h-3.5 w-3.5" /> Uyo, Akwa Ibom State
+              <Sparkles className="h-3.5 w-3.5" /> Annointed Journal & Blog
             </span>
-            <span className="text-stone-500">|</span>
-            <span className="text-stone-300 font-medium">{todayFormatted}</span>
-            <span className="hidden md:inline text-stone-500">|</span>
-            <span className="hidden md:inline text-stone-300">Vol. XXIV · Special Edition</span>
+            <span className="text-primary-foreground/30">|</span>
+            <span className="text-primary-foreground/80 font-medium">{todayFormatted}</span>
+            <span className="hidden md:inline text-primary-foreground/30">|</span>
+            <span className="hidden md:inline text-primary-foreground/75">Uyo, Nigeria</span>
           </div>
 
           {/* Breaking News Ticker */}
           <div className="hidden lg:flex items-center gap-2 flex-1 max-w-md mx-4 overflow-hidden">
-            <span className="bg-red-700 text-white font-bold uppercase text-[0.65rem] px-2 py-0.5 rounded-xs tracking-wider animate-pulse">
-              Gazette Ticker
+            <span className="bg-gold text-ink font-bold uppercase text-[0.65rem] px-2 py-0.5 rounded-full tracking-wider">
+              Trending
             </span>
             {posts.length > 0 && (
               <p
                 onClick={() => setSelectedPost(posts[currentTickerIndex])}
-                className="truncate text-stone-300 hover:text-gold cursor-pointer transition-colors"
+                className="truncate text-primary-foreground/90 hover:text-gold cursor-pointer transition-colors"
               >
                 {posts[currentTickerIndex]?.title}
               </p>
@@ -339,9 +339,9 @@ function NewsPage() {
           <div className="flex items-center gap-2.5">
             <button
               onClick={() => handleOpenSubmitModal("Student")}
-              className="inline-flex items-center gap-1.5 font-bold text-stone-900 hover:text-stone-950 transition-colors bg-gold hover:bg-amber-400 px-3 py-1 rounded-sm text-xs shadow-xs cursor-pointer"
+              className="inline-flex items-center gap-1.5 font-bold text-ink transition-colors bg-gold hover:bg-gold/90 px-3.5 py-1.5 rounded-full text-xs shadow-xs cursor-pointer"
             >
-              <PenSquare className="h-3.5 w-3.5" /> Submit Story (Students, Parents & Teachers)
+              <PenSquare className="h-3.5 w-3.5" /> Submit Story
             </button>
           </div>
         </div>
@@ -349,15 +349,15 @@ function NewsPage() {
 
       {/* Global Notification Banner */}
       {notificationMessage && (
-        <div className="bg-emerald-800 text-white text-xs font-semibold py-3 px-4 shadow-md animate-fade-in border-b border-emerald-900">
+        <div className="bg-primary text-primary-foreground text-xs font-semibold py-3 px-4 shadow-md animate-fade-in border-b border-primary-foreground/20">
           <div className="page-shell flex items-center justify-between gap-4">
             <div className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 shrink-0 text-emerald-300" />
+              <CheckCircle className="h-5 w-5 shrink-0 text-gold" />
               <span>{notificationMessage}</span>
             </div>
             <button
               onClick={() => setNotificationMessage("")}
-              className="text-emerald-200 hover:text-white cursor-pointer"
+              className="text-primary-foreground/70 hover:text-primary-foreground cursor-pointer"
             >
               <X className="h-4 w-4" />
             </button>
@@ -365,55 +365,50 @@ function NewsPage() {
         </div>
       )}
 
-      {/* Newspaper Masthead */}
-      <header className="border-b-4 border-double border-stone-900 bg-[#faf8f5] py-8">
-        <div className="page-shell text-center">
-          <div className="flex items-center justify-center gap-4 text-xs font-bold uppercase tracking-[0.25em] text-stone-600 mb-2">
-            <span>Faith</span>
-            <span>•</span>
-            <span>Character</span>
-            <span>•</span>
-            <span>Academic Excellence</span>
-          </div>
+      {/* Modern Blog Header Banner */}
+      <header className="page-hero texture-grid relative overflow-hidden py-12 md:py-16">
+        <div className="pointer-events-none absolute -right-20 -top-20 h-80 w-80 rounded-full bg-gold/15 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-20 left-10 h-72 w-72 rounded-full bg-sky-soft/10 blur-3xl" />
+        <div className="page-shell relative z-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="max-w-2xl">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-gold flex items-center gap-2">
+                <BookOpen className="h-4 w-4" /> Stories, Insights & School Life
+              </span>
+              <h1 className="mt-3 font-display text-4xl sm:text-5xl md:text-6xl font-bold leading-tight text-primary-foreground">
+                The Annointed Blog & Magazine
+              </h1>
+              <p className="mt-3 text-base sm:text-lg leading-relaxed text-primary-foreground/80">
+                Explore student perspectives, teacher innovations, STEM breakthroughs, and inspirational community stories from Annointed comprehensive high school.
+              </p>
+            </div>
 
-          <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-stone-950 scale-y-95">
-            The RGGA Chronicle
-          </h1>
-
-          <p className="mt-2 text-xs sm:text-sm font-serif italic text-stone-600 max-w-2xl mx-auto">
-            The Official Educational Gazette of Annointed comprehensive high school — Anita Street (by Basumoh Gas Plant), Uyo
-          </p>
-
-          <div className="mt-6 flex flex-wrap items-center justify-between border-y-2 border-stone-800 py-2.5 text-xs font-bold uppercase tracking-wider text-stone-800">
-            <span>Established on Grace</span>
-            <span className="hidden sm:inline">"A Place to Belong, Believe & Become"</span>
-            <div className="flex items-center gap-4">
-              <span>{posts.length} Gazette Editions</span>
-              <button
+            <div className="flex flex-wrap gap-3">
+              <Button
                 onClick={() => handleOpenSubmitModal("Student")}
-                className="text-amber-800 hover:text-amber-950 underline cursor-pointer font-black"
+                className="bg-gold text-ink hover:bg-gold/90 font-bold px-5 h-11 rounded-full shadow-md cursor-pointer"
               >
-                + Submit a Student or Community Story
-              </button>
+                <PenSquare className="h-4 w-4 mr-1.5" /> Write for the Blog
+              </Button>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Newspaper Category Navigation & Search Bar */}
-      <div className="sticky top-0 z-30 border-b border-stone-300 bg-[#f8f6f0] shadow-xs backdrop-blur-md">
-        <div className="page-shell flex flex-col md:flex-row items-center justify-between gap-3 py-2.5">
+      {/* Modern Category Pill Navigation & Search Bar */}
+      <div className="sticky top-0 z-30 border-b border-border bg-background/95 shadow-xs backdrop-blur-md">
+        <div className="page-shell flex flex-col md:flex-row items-center justify-between gap-4 py-3.5">
           {/* Categories */}
-          <nav className="flex flex-wrap items-center gap-1 sm:gap-2" aria-label="Newspaper sections">
+          <nav className="flex flex-wrap items-center gap-1.5 sm:gap-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0" aria-label="Blog topics">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={cn(
-                  "cursor-pointer px-3 py-1.5 text-xs font-bold uppercase tracking-wider transition-all rounded-xs",
+                  "cursor-pointer px-4 py-1.5 text-xs font-bold uppercase tracking-wider transition-all rounded-full whitespace-nowrap",
                   activeCategory === cat
-                    ? "bg-stone-900 text-white shadow-xs"
-                    : "text-stone-700 hover:bg-stone-200 hover:text-stone-900"
+                    ? "bg-primary text-primary-foreground shadow-xs"
+                    : "border border-border bg-card text-muted-foreground hover:bg-gold-soft hover:text-primary"
                 )}
               >
                 {cat}
@@ -422,34 +417,34 @@ function NewsPage() {
           </nav>
 
           {/* Search Box */}
-          <div className="relative w-full md:w-64">
-            <Search className="absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-stone-500" />
+          <div className="relative w-full md:w-72">
+            <Search className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <Input
               type="text"
-              placeholder="Search newspaper..."
+              placeholder="Search articles, authors, topics..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="h-8 rounded-full bg-white pl-8 pr-3 text-xs border-stone-300 focus-visible:ring-stone-800"
+              className="h-9 rounded-full bg-card pl-9 pr-4 text-xs border-border focus-visible:ring-primary shadow-2xs"
             />
           </div>
         </div>
       </div>
 
-      {/* Main Newspaper Layout */}
-      <main className="page-shell py-8">
+      {/* Main Blog Layout */}
+      <main className="page-shell py-10">
         {filteredPosts.length === 0 ? (
-          <div className="my-16 rounded-md border-2 border-dashed border-stone-300 bg-stone-100 p-12 text-center">
-            <Newspaper className="mx-auto h-12 w-12 text-stone-400" />
-            <h2 className="mt-4 font-display text-2xl font-bold text-stone-800">
+          <div className="my-16 rounded-3xl border-2 border-dashed border-border bg-soft p-12 text-center">
+            <BookOpen className="mx-auto h-12 w-12 text-muted-foreground/60" />
+            <h2 className="mt-4 font-display text-2xl font-bold text-primary">
               No Articles Found in This Section
             </h2>
-            <p className="mt-2 text-sm text-stone-600">
-              No published stories match your active filter. Try resetting search parameters or contribute a new post.
+            <p className="mt-2 text-sm text-muted-foreground max-w-md mx-auto">
+              No published stories match your active filter. Try resetting your search or contribute a new article.
             </p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Button
                 variant="outline"
-                className="border-stone-800 text-stone-800"
+                className="border-border text-foreground rounded-full"
                 onClick={() => {
                   setSearchQuery("");
                   setActiveCategory("All Editions");
@@ -459,83 +454,88 @@ function NewsPage() {
               </Button>
               <Button
                 onClick={() => handleOpenSubmitModal("Student")}
-                className="bg-stone-900 text-white hover:bg-stone-800"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full"
               >
                 <PenSquare className="h-4 w-4 mr-2" /> Submit an Article
               </Button>
             </div>
           </div>
         ) : (
-          <div className="grid gap-8 lg:grid-cols-12">
+          <div className="grid gap-10 lg:grid-cols-12">
             {/* Left & Center Columns: Editorial Features (8 of 12 cols) */}
             <div className="lg:col-span-8 space-y-10">
-              {/* Front-Page Lead Story */}
+              {/* Featured / Lead Story Card */}
               {leadStory && (
                 <article
                   onClick={() => setSelectedPost(leadStory)}
-                  className="group cursor-pointer border-b-2 border-stone-800 pb-8 transition-colors"
+                  className="group cursor-pointer overflow-hidden rounded-[2.5rem] border border-border bg-card shadow-sm hover:shadow-xl transition-all duration-300"
                 >
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-red-700 mb-2">
-                    <Flame className="h-4 w-4" /> Front Page Lead Story · {leadStory.category}
-                  </div>
-
-                  <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black leading-tight text-stone-950 group-hover:text-amber-800 transition-colors">
-                    {leadStory.title}
-                  </h2>
-
-                  <div className="mt-3 flex flex-wrap items-center gap-4 text-xs font-serif text-stone-600">
-                    <span className="font-sans font-bold text-stone-900 uppercase tracking-wider">
-                      By {leadStory.author} ({leadStory.authorRole})
-                    </span>
-                    <span>•</span>
-                    <span className="flex items-center gap-1">
-                      <CalendarDays className="h-3.5 w-3.5" /> {leadStory.date}
-                    </span>
-                    <span>•</span>
-                    <span className="flex items-center gap-1">
-                      <Clock className="h-3.5 w-3.5" /> {leadStory.readTime}
-                    </span>
-                  </div>
-
-                  {/* Fixed Minimal Size Lead Feature Image */}
-                  <div className="mt-5 relative aspect-[16/9] max-h-[440px] w-full overflow-hidden rounded-sm border border-stone-300 bg-stone-200 shadow-xs">
+                  <div className="relative aspect-[16/9] max-h-[460px] w-full overflow-hidden bg-muted">
                     <img
                       src={leadStory.fullImage || leadStory.previewImage}
                       alt={leadStory.title}
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                       loading="eager"
                     />
-                    <div className="absolute bottom-0 inset-x-0 bg-stone-900/85 text-stone-200 px-4 py-2 text-xs font-serif italic">
-                      Special Gazette Report · Annointed comprehensive high school, Uyo
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent" />
+                    
+                    <div className="absolute top-5 left-5 flex flex-wrap gap-2">
+                      <span className="rounded-full bg-gold px-3.5 py-1 text-xs font-bold text-ink shadow-md flex items-center gap-1.5">
+                        <Flame className="h-3.5 w-3.5" /> Featured Story
+                      </span>
+                      <span className="rounded-full bg-background/90 backdrop-blur-md px-3.5 py-1 text-xs font-bold text-primary shadow-md">
+                        {leadStory.category}
+                      </span>
+                    </div>
+
+                    <div className="absolute bottom-5 left-5 right-5 text-primary-foreground">
+                      <div className="flex flex-wrap items-center gap-3 text-xs text-primary-foreground/80 mb-2">
+                        <span className="flex items-center gap-1 font-semibold">
+                          <CalendarDays className="h-3.5 w-3.5 text-gold" /> {leadStory.date}
+                        </span>
+                        <span>•</span>
+                        <span className="flex items-center gap-1">
+                          <Clock className="h-3.5 w-3.5 text-gold" /> {leadStory.readTime}
+                        </span>
+                      </div>
+                      <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-white group-hover:text-gold transition-colors">
+                        {leadStory.title}
+                      </h2>
                     </div>
                   </div>
 
-                  <p className="mt-5 font-serif text-lg leading-relaxed text-stone-800 line-clamp-3">
-                    <span className="float-left text-5xl leading-none font-display font-bold pr-3 pt-1 text-stone-950">
-                      {leadStory.excerpt.charAt(0)}
-                    </span>
-                    {leadStory.excerpt.slice(1)}
-                  </p>
+                  <div className="p-6 sm:p-8">
+                    <p className="text-sm sm:text-base leading-relaxed text-muted-foreground line-clamp-3">
+                      {leadStory.excerpt}
+                    </p>
 
-                  <div className="mt-4 flex items-center justify-between">
-                    <div className="flex items-center gap-2 text-sm font-bold text-stone-900 group-hover:text-amber-800">
-                      Read Complete Front Page Story <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <div className="mt-6 pt-5 border-t border-border flex items-center justify-between">
+                      <div className="flex items-center gap-3">
+                        <div className="grid h-10 w-10 place-items-center rounded-full bg-gold-soft text-primary font-bold text-sm shadow-inner">
+                          {leadStory.author.charAt(0)}
+                        </div>
+                        <div>
+                          <p className="text-xs font-bold text-primary">{leadStory.author}</p>
+                          <p className="text-[0.68rem] text-muted-foreground uppercase tracking-wider">{leadStory.authorRole}</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2 text-sm font-bold text-primary group-hover:text-gold-deep transition-colors">
+                        Read Full Story <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </div>
                     </div>
-                    <span className="flex items-center gap-1 text-xs font-sans text-stone-500">
-                      <MessageSquare className="h-3.5 w-3.5 text-amber-700" /> Join Discussion
-                    </span>
                   </div>
                 </article>
               )}
 
-              {/* Secondary Front-Page Stories (2-3 Columns) */}
+              {/* Secondary Stories (3-Column Grid) */}
               {secondaryStories.length > 0 && (
                 <div>
-                  <div className="flex items-center justify-between border-b-2 border-stone-800 pb-2 mb-6">
-                    <h3 className="font-display text-xl font-bold uppercase tracking-wider text-stone-950 flex items-center gap-2">
-                      <TrendingUp className="h-5 w-5 text-amber-700" /> Academic Highlights & Columns
+                  <div className="flex items-center justify-between border-b border-border pb-3 mb-6">
+                    <h3 className="font-display text-2xl font-bold text-primary flex items-center gap-2">
+                      <TrendingUp className="h-5 w-5 text-gold-deep" /> Highlights & Trending Insights
                     </h3>
-                    <span className="text-xs font-serif text-stone-600">Featured Insights</span>
+                    <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Top Reads</span>
                   </div>
 
                   <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
@@ -543,33 +543,34 @@ function NewsPage() {
                       <article
                         key={story.id}
                         onClick={() => setSelectedPost(story)}
-                        className="group flex flex-col cursor-pointer border-r border-stone-300 last:border-r-0 pr-4 last:pr-0"
+                        className="group flex flex-col justify-between cursor-pointer rounded-3xl border border-border bg-card p-4 shadow-2xs hover:shadow-lg transition-all duration-300"
                       >
-                        <div className="aspect-[16/10] h-40 w-full overflow-hidden rounded-xs border border-stone-300 bg-stone-100">
-                          <img
-                            src={story.previewImage}
-                            alt={story.title}
-                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            loading="lazy"
-                          />
+                        <div>
+                          <div className="aspect-[16/10] h-40 w-full overflow-hidden rounded-2xl bg-muted relative">
+                            <img
+                              src={story.previewImage}
+                              alt={story.title}
+                              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                              loading="lazy"
+                            />
+                            <span className="absolute top-2.5 left-2.5 rounded-full bg-background/90 px-2.5 py-0.5 text-[0.65rem] font-bold text-primary shadow-xs">
+                              {story.category}
+                            </span>
+                          </div>
+
+                          <h4 className="mt-3 font-display text-base font-bold leading-snug text-primary group-hover:text-gold-deep transition-colors line-clamp-2">
+                            {story.title}
+                          </h4>
+
+                          <p className="mt-2 text-xs leading-relaxed text-muted-foreground line-clamp-2">
+                            {story.excerpt}
+                          </p>
                         </div>
 
-                        <span className="mt-3 text-[0.65rem] font-bold uppercase tracking-wider text-amber-800">
-                          {story.category}
-                        </span>
-
-                        <h4 className="mt-1 font-display text-base font-bold leading-snug text-stone-950 group-hover:text-amber-800 transition-colors line-clamp-2">
-                          {story.title}
-                        </h4>
-
-                        <p className="mt-2 text-xs font-serif leading-relaxed text-stone-700 line-clamp-3 flex-1">
-                          {story.excerpt}
-                        </p>
-
-                        <div className="mt-3 pt-2 border-t border-stone-200 flex items-center justify-between text-[0.7rem] text-stone-500">
-                          <span>By {story.author.split(" ")[0]}</span>
-                          <span className="font-bold text-stone-800 group-hover:text-amber-800">
-                            Read →
+                        <div className="mt-4 pt-3 border-t border-border/60 flex items-center justify-between text-[0.7rem] text-muted-foreground">
+                          <span className="font-semibold text-primary">{story.author.split(" ")[0]}</span>
+                          <span className="flex items-center gap-1 text-gold-deep font-bold group-hover:underline">
+                            Read <ArrowRight className="h-3 w-3" />
                           </span>
                         </div>
                       </article>
@@ -578,14 +579,40 @@ function NewsPage() {
                 </div>
               )}
 
-              {/* Remaining Newspaper Story Feed */}
+              {/* ============================================================ */}
+              {/* IN-PAGE / IN-FEED ADVERTISEMENT BANNER                      */}
+              {/* ============================================================ */}
+              <div className="relative overflow-hidden rounded-[2.5rem] border-2 border-gold/40 bg-gradient-to-r from-primary via-primary/95 to-primary p-6 sm:p-8 text-primary-foreground shadow-lg">
+                <div className="pointer-events-none absolute -right-12 -top-12 h-56 w-56 rounded-full bg-gold/20 blur-2xl" />
+                <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                  <div className="max-w-lg">
+                    <span className="inline-block rounded-full bg-gold px-3 py-0.5 text-[0.65rem] font-black uppercase tracking-widest text-ink shadow-sm">
+                      Sponsored Announcement
+                    </span>
+                    <h3 className="mt-2.5 font-display text-2xl sm:text-3xl font-bold text-white">
+                      Admissions Open: 2026/2027 Session
+                    </h3>
+                    <p className="mt-2 text-xs sm:text-sm text-primary-foreground/80 leading-relaxed">
+                      Give your child a nurturing, faith-informed foundation with STEM labs, creative arts, and WAEC/BECE leadership training at Annointed comprehensive high school.
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+                    <Button asChild className="bg-gold text-ink hover:bg-gold/90 font-bold px-6 h-11 rounded-full shadow-md">
+                      <Link to="/admissions">Apply Online Now <ArrowRight className="h-4 w-4 ml-1" /></Link>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Remaining Blog Feed */}
               {remainingStories.length > 0 && (
                 <div>
-                  <div className="flex items-center justify-between border-b-2 border-stone-800 pb-2 mb-6">
-                    <h3 className="font-display text-xl font-bold uppercase tracking-wider text-stone-950 flex items-center gap-2">
-                      <Layers className="h-5 w-5 text-amber-700" /> Full Chronicle Gazette
+                  <div className="flex items-center justify-between border-b border-border pb-3 mb-6">
+                    <h3 className="font-display text-2xl font-bold text-primary flex items-center gap-2">
+                      <Layers className="h-5 w-5 text-gold-deep" /> All Published Stories
                     </h3>
-                    <span className="text-xs font-serif text-stone-600">All Published Articles</span>
+                    <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">{remainingStories.length} Articles</span>
                   </div>
 
                   <div className="grid gap-6 sm:grid-cols-2">
@@ -593,36 +620,39 @@ function NewsPage() {
                       <article
                         key={story.id}
                         onClick={() => setSelectedPost(story)}
-                        className="group flex flex-col justify-between cursor-pointer border border-stone-300 rounded-sm bg-white p-5 shadow-2xs hover:border-stone-800 hover:shadow-sm transition-all"
+                        className="group flex flex-col justify-between cursor-pointer rounded-3xl border border-border bg-card p-5 shadow-2xs hover:shadow-lg hover:border-gold/50 transition-all duration-300"
                       >
                         <div>
-                          <div className="aspect-[16/10] h-44 w-full overflow-hidden rounded-xs border border-stone-200 bg-stone-100 mb-4">
+                          <div className="aspect-[16/10] h-44 w-full overflow-hidden rounded-2xl bg-muted mb-4 relative">
                             <img
                               src={story.previewImage}
                               alt={story.title}
                               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                               loading="lazy"
                             />
+                            <span className="absolute top-3 left-3 rounded-full bg-background/90 px-3 py-0.5 text-[0.68rem] font-bold text-primary shadow-xs">
+                              {story.category}
+                            </span>
                           </div>
 
-                          <div className="flex items-center justify-between text-[0.68rem] font-bold uppercase tracking-wider text-stone-500">
-                            <span className="text-amber-800">{story.category}</span>
+                          <div className="flex items-center justify-between text-[0.68rem] font-bold uppercase tracking-wider text-muted-foreground">
                             <span>{story.date}</span>
+                            <span>{story.readTime}</span>
                           </div>
 
-                          <h4 className="mt-2 font-display text-lg font-bold leading-snug text-stone-950 group-hover:text-amber-800 transition-colors line-clamp-2">
+                          <h4 className="mt-2 font-display text-lg font-bold leading-snug text-primary group-hover:text-gold-deep transition-colors line-clamp-2">
                             {story.title}
                           </h4>
 
-                          <p className="mt-2 text-xs font-serif leading-relaxed text-stone-700 line-clamp-3">
+                          <p className="mt-2 text-xs leading-relaxed text-muted-foreground line-clamp-3">
                             {story.excerpt}
                           </p>
                         </div>
 
-                        <div className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-stone-600">
-                          <span className="font-semibold text-stone-900">{story.author}</span>
-                          <span className="font-bold text-amber-800 group-hover:underline">
-                            Read Story →
+                        <div className="mt-5 pt-3 border-t border-border flex items-center justify-between text-xs text-muted-foreground">
+                          <span className="font-semibold text-primary">{story.author}</span>
+                          <span className="font-bold text-gold-deep group-hover:underline flex items-center gap-1">
+                            Read Article <ArrowRight className="h-3 w-3" />
                           </span>
                         </div>
                       </article>
@@ -632,77 +662,112 @@ function NewsPage() {
               )}
             </div>
 
-            {/* Right Column: Newspaper Editorial Sidebar (4 of 12 cols) */}
+            {/* Right Column: Modern Blog Sidebar & Ad Corners (4 of 12 cols) */}
             <aside className="lg:col-span-4 space-y-8">
-              {/* Community & Student Contributor Box */}
-              <div className="border-2 border-stone-900 rounded-sm bg-[#faf6ed] p-6 shadow-xs relative overflow-hidden">
-                <div className="flex items-center gap-2 text-amber-900 border-b border-amber-300 pb-3">
-                  <PenSquare className="h-5 w-5 text-amber-800" />
-                  <h3 className="font-display text-base font-black uppercase tracking-wider text-stone-950">
-                    Student, Parent & Teacher Voice
+              {/* Community & Contributor Box */}
+              <div className="rounded-3xl border border-border bg-gradient-to-br from-gold-soft/70 via-background to-card p-6 shadow-sm">
+                <div className="flex items-center gap-2 text-primary border-b border-border/80 pb-3">
+                  <PenSquare className="h-5 w-5 text-gold-deep" />
+                  <h3 className="font-display text-lg font-bold text-primary">
+                    Join Our Blog Contributors
                   </h3>
                 </div>
 
-                <p className="mt-3 text-xs text-stone-700 font-serif leading-relaxed">
-                  Have a student creative writing piece, classroom breakthrough, STEM project, or parenting reflection? Submit your article for review and publication in the Gazette.
+                <p className="mt-3 text-xs text-muted-foreground leading-relaxed">
+                  Pupils, parents, and teachers can share poetry, STEM experiments, parenting reflections, and school club achievements with our community.
                 </p>
 
-                <div className="mt-4 space-y-2">
+                <div className="mt-5 space-y-2.5">
                   <Button
                     onClick={() => handleOpenSubmitModal("Student")}
-                    className="w-full bg-stone-900 text-white hover:bg-stone-800 text-xs font-bold uppercase tracking-wider h-10 shadow-xs cursor-pointer"
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 text-xs font-bold uppercase tracking-wider h-10 rounded-full shadow-xs cursor-pointer"
                   >
                     <GraduationCap className="h-3.5 w-3.5 mr-1.5 text-gold" /> Submit as Student / Pupil
                   </Button>
 
                   <Button
                     onClick={() => handleOpenSubmitModal("Parent")}
-                    className="w-full bg-amber-800 text-white hover:bg-amber-900 text-xs font-bold uppercase tracking-wider h-10 shadow-xs cursor-pointer"
+                    variant="outline"
+                    className="w-full border-border bg-card text-primary hover:bg-gold-soft text-xs font-bold uppercase tracking-wider h-10 rounded-full shadow-xs cursor-pointer"
                   >
-                    <User className="h-3.5 w-3.5 mr-1.5" /> Submit as Parent / Guardian
+                    <User className="h-3.5 w-3.5 mr-1.5 text-gold-deep" /> Submit as Parent / Guardian
                   </Button>
 
                   <Button
                     onClick={() => handleOpenSubmitModal("Teacher")}
                     variant="outline"
-                    className="w-full border-stone-800 text-stone-900 hover:bg-stone-200 text-xs font-bold uppercase tracking-wider h-10 cursor-pointer"
+                    className="w-full border-border bg-card text-primary hover:bg-gold-soft text-xs font-bold uppercase tracking-wider h-10 rounded-full cursor-pointer"
                   >
-                    <BookOpen className="h-3.5 w-3.5 mr-1.5" /> Submit as Teacher / Educator
+                    <BookOpen className="h-3.5 w-3.5 mr-1.5 text-gold-deep" /> Submit as Teacher / Educator
                   </Button>
                 </div>
 
-                <p className="mt-3 text-[0.68rem] text-stone-500 font-serif italic text-center">
-                  *All submissions are reviewed by school administrators before publication.
+                <p className="mt-3 text-[0.68rem] text-muted-foreground italic text-center">
+                  *Submissions are reviewed by school administrators before publishing.
                 </p>
               </div>
 
+              {/* ============================================================ */}
+              {/* SIDEBAR AD CORNER 1: SUMMER CODING & ROBOTICS CAMP          */}
+              {/* ============================================================ */}
+              <div className="rounded-3xl border-2 border-gold/50 bg-gradient-to-b from-primary via-primary/95 to-primary p-6 text-primary-foreground shadow-md relative overflow-hidden">
+                <div className="flex items-center justify-between text-[0.62rem] font-bold uppercase tracking-widest text-gold mb-2">
+                  <span className="flex items-center gap-1"><Sparkles className="h-3 w-3" /> Sponsor Spotlight</span>
+                  <span className="rounded-full bg-gold/20 px-2 py-0.5 text-gold font-black">Ad</span>
+                </div>
+
+                <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-primary/50 my-3 shadow-inner">
+                  <img
+                    src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=600&q=80"
+                    alt="Annointed Robotics & Coding Camp"
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
+                  <span className="absolute bottom-2 left-2 rounded-full bg-gold text-ink text-[0.65rem] font-bold px-2 py-0.5">
+                    Ages 6 – 16
+                  </span>
+                </div>
+
+                <h4 className="font-display text-lg font-bold text-white leading-snug">
+                  Annointed STEM & Robotics Summer Bootcamp
+                </h4>
+
+                <p className="mt-2 text-xs text-primary-foreground/80 leading-relaxed">
+                  Hands-on drone piloting, game development, Python programming, and practical electronics labs during the holidays.
+                </p>
+
+                <Button asChild className="mt-4 w-full bg-gold text-ink hover:bg-gold/90 font-bold text-xs h-10 rounded-full shadow-md">
+                  <Link to="/contact">Register Your Child Today <ArrowRight className="h-3.5 w-3.5 ml-1" /></Link>
+                </Button>
+              </div>
+
               {/* Trending Headlines Widget */}
-              <div className="border border-stone-300 rounded-sm bg-white p-6 shadow-2xs">
-                <div className="flex items-center gap-2 border-b-2 border-stone-900 pb-3 text-stone-950">
-                  <Flame className="h-5 w-5 text-red-700" />
-                  <h3 className="font-display text-lg font-black uppercase tracking-wider">
-                    Most Read in Gazette
+              <div className="rounded-3xl border border-border bg-card p-6 shadow-2xs">
+                <div className="flex items-center gap-2 border-b border-border pb-3 text-primary">
+                  <Flame className="h-5 w-5 text-gold-deep" />
+                  <h3 className="font-display text-lg font-bold">
+                    Most Read Articles
                   </h3>
                 </div>
 
-                <div className="mt-4 divide-y divide-stone-200">
+                <div className="mt-4 divide-y divide-border">
                   {trendingStories.map((post, index) => (
                     <article
                       key={post.id}
                       onClick={() => setSelectedPost(post)}
                       className="group cursor-pointer py-3.5 first:pt-0 last:pb-0 flex items-start gap-3.5"
                     >
-                      <span className="font-display text-2xl font-black text-stone-300 group-hover:text-amber-700 transition-colors">
+                      <span className="font-display text-2xl font-bold text-border group-hover:text-gold-deep transition-colors">
                         0{index + 1}
                       </span>
                       <div className="min-w-0 flex-1">
-                        <span className="text-[0.65rem] font-bold uppercase tracking-wider text-amber-800">
+                        <span className="text-[0.65rem] font-bold uppercase tracking-wider text-gold-deep">
                           {post.category}
                         </span>
-                        <h4 className="font-display text-sm font-bold leading-snug text-stone-900 group-hover:text-amber-800 transition-colors line-clamp-2 mt-0.5">
+                        <h4 className="font-display text-sm font-bold leading-snug text-primary group-hover:text-gold-deep transition-colors line-clamp-2 mt-0.5">
                           {post.title}
                         </h4>
-                        <p className="mt-1 text-[0.68rem] text-stone-500 font-serif">
+                        <p className="mt-1 text-[0.68rem] text-muted-foreground">
                           {post.date} · {post.readTime}
                         </p>
                       </div>
@@ -711,60 +776,82 @@ function NewsPage() {
                 </div>
               </div>
 
+              {/* ============================================================ */}
+              {/* SIDEBAR AD CORNER 2: UNIFORMS & BOOKSHOP HUB                */}
+              {/* ============================================================ */}
+              <div className="rounded-3xl border border-border bg-card p-5 shadow-xs">
+                <div className="flex items-center justify-between text-[0.62rem] font-bold uppercase tracking-widest text-muted-foreground mb-2">
+                  <span>Academy Resource Corner</span>
+                  <span className="rounded-full bg-soft px-2 py-0.5 text-xs font-semibold text-primary">Sponsored</span>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <div className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gold-soft text-primary">
+                    <BookOpen className="h-6 w-6 text-gold-deep" />
+                  </div>
+                  <div>
+                    <h5 className="font-display font-bold text-sm text-primary">
+                      Official Bookshop & Uniforms
+                    </h5>
+                    <p className="text-[0.7rem] text-muted-foreground">
+                      Order government-approved curriculum textbooks, stationery sets & branded uniforms.
+                    </p>
+                  </div>
+                </div>
+
+                <Button asChild variant="outline" className="mt-4 w-full rounded-full border-border text-xs font-bold text-primary hover:bg-gold-soft h-9">
+                  <Link to="/contact">Enquire at Bookshop Desk</Link>
+                </Button>
+              </div>
+
               {/* Head of School Quote / Message */}
-              <div className="border-2 border-stone-800 bg-[#f4efe6] p-6 rounded-xs relative">
-                <Quote className="h-8 w-8 text-amber-700/40 absolute top-4 right-4" />
-                <span className="text-xs font-bold uppercase tracking-widest text-amber-900">
-                  Editorial Dispatch
+              <div className="rounded-3xl border border-border bg-soft p-6 relative">
+                <Quote className="h-8 w-8 text-gold-deep/30 absolute top-4 right-4" />
+                <span className="text-xs font-bold uppercase tracking-widest text-gold-deep">
+                  Proprietress Reflection
                 </span>
-                <blockquote className="mt-3 font-serif italic text-sm leading-relaxed text-stone-800">
+                <blockquote className="mt-3 font-serif italic text-sm leading-relaxed text-foreground/80">
                   "Education is not merely training the mind for examinations; it is molding character, stirring imagination, and equipping children to walk in godly purpose."
                 </blockquote>
-                <div className="mt-4 pt-3 border-t border-stone-300 flex items-center gap-3">
-                  <div className="grid h-9 w-9 place-items-center rounded-full bg-stone-900 font-display font-bold text-xs text-white">
+                <div className="mt-4 pt-3 border-t border-border flex items-center gap-3">
+                  <div className="grid h-10 w-10 place-items-center rounded-full bg-primary font-display font-bold text-xs text-primary-foreground shadow-sm">
                     EA
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-stone-900">Dr. / Pastor (Mrs.) E. Akpan</p>
-                    <p className="text-[0.68rem] text-stone-600">Proprietress & Director of Schools</p>
+                    <p className="text-xs font-bold text-primary">Dr. / Pastor (Mrs.) E. Akpan</p>
+                    <p className="text-[0.68rem] text-muted-foreground">Proprietress & Director of Schools</p>
                   </div>
                 </div>
               </div>
 
               {/* School Notice & Calendar Box */}
-              <div className="border border-stone-300 bg-white p-6 rounded-sm">
-                <h3 className="font-display text-base font-bold uppercase tracking-wider border-b-2 border-stone-900 pb-2 text-stone-950">
+              <div className="rounded-3xl border border-border bg-card p-6 shadow-2xs">
+                <h3 className="font-display text-base font-bold uppercase tracking-wider border-b border-border pb-2 text-primary">
                   Academy Noticeboard
                 </h3>
-                <ul className="mt-4 space-y-3 text-xs">
+                <ul className="mt-4 space-y-3.5 text-xs">
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-700 mt-0.5" />
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-gold-deep mt-0.5" />
                     <div>
-                      <strong className="text-stone-900 block">Admissions in Progress</strong>
-                      <span className="text-stone-600">Creche, Nursery, Primary & Secondary</span>
+                      <strong className="text-primary block font-semibold">Admissions in Progress</strong>
+                      <span className="text-muted-foreground">Creche, Nursery, Primary & Secondary</span>
                     </div>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-700 mt-0.5" />
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-gold-deep mt-0.5" />
                     <div>
-                      <strong className="text-stone-900 block">Parent-Teacher Fellowship</strong>
-                      <span className="text-stone-600">Termly consultation sessions scheduled</span>
+                      <strong className="text-primary block font-semibold">Parent-Teacher Fellowship</strong>
+                      <span className="text-muted-foreground">Termly family updates & student exhibitions</span>
                     </div>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-700 mt-0.5" />
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-gold-deep mt-0.5" />
                     <div>
-                      <strong className="text-stone-900 block">STEM & Robotics Exhibition</strong>
-                      <span className="text-stone-600">Annual Science & Tech showcase</span>
+                      <strong className="text-primary block font-semibold">STEM Science Fair 2026</strong>
+                      <span className="text-muted-foreground">Student innovation prototypes on showcase</span>
                     </div>
                   </li>
                 </ul>
-
-                <div className="mt-6 pt-4 border-t border-stone-200">
-                  <Button asChild className="w-full bg-stone-900 text-white hover:bg-stone-800 text-xs font-bold uppercase tracking-wider">
-                    <Link to="/admissions">Enquire About Enrollment</Link>
-                  </Button>
-                </div>
               </div>
             </aside>
           </div>
